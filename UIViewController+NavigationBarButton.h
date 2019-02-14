@@ -23,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
                        textColor:(UIColor*)textColor
                        alignment:(NSTextAlignment)alignment;
 
+/**
+ 得到添加的导航栏左侧按钮
+
+ @return 左侧按钮
+ */
 - (UIButton*)getLeftBarItemCustomView;
 
 @end
