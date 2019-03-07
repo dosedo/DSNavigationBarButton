@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
                            title:(NSString *)title
                             font:(UIFont*)font
                        textColor:(UIColor*)textColor
-                       alignment:(NSTextAlignment)alignment;
+                       alignment:(NSTextAlignment)alignment
+                          toLeft:(CGFloat)toLeft;
 
 /**
  得到添加的导航栏左侧按钮

@@ -14,15 +14,15 @@ static CGFloat const gButtonSizeHeight = 40;
 @implementation UIViewController (NavigationBarButton)
 
 - (void)addLeftBarItemWithAction:(SEL)action title:(NSString *)title{
-    
+    [self addLeftBarItemWithAction:action title:title font:[UIFont systemFontOfSize:14] textColor:[UIColor whiteColor] alignment:NSTextAlignmentLeft toLeft:-5];
 }
 
-- (void)addLeftBarItemWithAction:(SEL)action title:(NSString *)title font:(UIFont *)font textColor:(UIColor *)textColor alignment:(NSTextAlignment)alignment{
+- (void)addLeftBarItemWithAction:(SEL)action title:(NSString *)title font:(UIFont *)font textColor:(UIColor *)textColor alignment:(NSTextAlignment)alignment toLeft:(CGFloat)toLeft{
     UIBarButtonItem *btnItem =
     [self barItemWithTitle:title normalImgName:nil hightLightImgName:nil selectImgName:nil target:self action:action titleFont:font titleColor:textColor textAlignmnet:alignment size:CGSizeMake(gButtonSizeWidth, gButtonSizeHeight)];
     
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSpacer.width = -5;
+    negativeSpacer.width = toLeft;
     self.navigationItem.leftBarButtonItems = @[negativeSpacer,btnItem];
 }
 
